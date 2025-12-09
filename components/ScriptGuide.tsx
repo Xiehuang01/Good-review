@@ -44,13 +44,17 @@ const ScriptGuide: React.FC = () => {
             </p>
 
             <div className="mt-auto space-y-4">
-                <div className="bg-slate-900/90 backdrop-blur rounded-2xl p-4 relative group/code overflow-hidden border border-slate-700/50 shadow-inner">
+                <div className="bg-slate-900/90 backdrop-blur rounded-2xl p-4 relative group/code overflow-hidden border border-slate-700/50 shadow-inner h-32">
                     <div className="absolute top-0 right-0 p-2 opacity-0 group-hover/code:opacity-100 transition-opacity">
                          <div className="bg-slate-800 text-[10px] text-slate-400 px-1.5 py-0.5 rounded">JS</div>
                     </div>
-                    <code className="text-brand-300 font-mono text-xs block truncate opacity-80">
+                    <code className="text-brand-300 font-mono text-xs block opacity-80">
                         // ==UserScript==<br/>
-                        // @name Chaoxing...
+                        // @name Chaoxing...<br/>
+                        // @name         Chaoxing Work Scraper<br/>
+                        // @namespace    cx-work-scraper<br/>
+                        // @version      1.3.0<br/>
+                        ...
                     </code>
                 </div>
                 <button

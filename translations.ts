@@ -127,16 +127,16 @@ export const translations = {
         panelDesc: "点击右下角悬浮窗的“复制JSON”。",
         import: "导入数据",
         importDesc: "在“导入”页粘贴数据。",
-        tipBox: "提示：已批改的作业页面提取效果最佳。"
+        tipBox: "提示：脚本会将你的答案作为题目答案。"
       },
     },
     import: {
       title: "投喂小怪兽",
       subtitle: "把它喂饱，题库就是你的了！复制JSON或拖入文件。",
       nameLabel: "给这顿饭起个名",
-      namePlaceholder: "例如：高数期末大餐...",
+      namePlaceholder: "给这顿饭(题库)起个名",
       optional: "（选填）",
-      jsonLabel: "大嘴巴",
+      jsonLabel: "粘贴或者拖拽文件到这里",
       btnText: "喂给它！",
       btnFile: "上传文件",
       errorJson: "呸！这不好吃 (JSON格式错误)",
