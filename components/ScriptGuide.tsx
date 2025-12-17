@@ -53,7 +53,7 @@ const ScriptGuide: React.FC = () => {
                         // @name Chaoxing...<br/>
                         // @name         Chaoxing Work Scraper<br/>
                         // @namespace    cx-work-scraper<br/>
-                        // @version      1.3.0<br/>
+                        // @version      1.4.0<br/>
                         ...
                     </code>
                 </div>
