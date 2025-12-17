@@ -1,7 +1,4 @@
-{
-  "source": "https://mooc1.chaoxing.com/mooc-ans/mooc2/work/dowork?courseId=255294606&classId=127617083&cpi=357258622&workId=48988685&answerId=54735477&knowledgeId=&jobid=&standardEnc=b88e268b4c84c24c071ca0dc09477deb&enc=7887a5bb96c05528a65e1659054d8cad",
-  "ts": 1765944595200,
-  "items": [
+[
     {
       "id": 1,
       "type": "单选",
@@ -5000,17 +4997,5 @@
         "https://p.ananas.chaoxing.com/star3/origin/414a6b5517d86958a39260d1d5b270dc.png",
         "https://p.ananas.chaoxing.com/star3/origin/7d4bd66b8642ce6a438544178f10a05c.png"
       ]
-    },
-    {
-      "id": 223,
-      "type": "填空",
-      "title": "change",
-      "options": [],
-      "correctAnswer": [],
-      "selectedAnswer": [],
-      "images": [
-        "https://mooc1.chaoxing.com/mooc-ans/mooc2/work/dowork?courseId=255294606&classId=127617083&cpi=357258622&workId=48988685&answerId=54735477&knowledgeId=&jobid=&standardEnc=b88e268b4c84c24c071ca0dc09477deb&enc=7887a5bb96c05528a65e1659054d8cad"
-      ]
     }
-  ]
-}
+]

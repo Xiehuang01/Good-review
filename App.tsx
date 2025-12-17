@@ -9,6 +9,9 @@ import { Layout, Import, BookMarked, Sparkles, Languages, AlertTriangle } from '
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { DEFAULT_BANKS } from './constants';
 
+// 版本号，每次更新题库时递增
+const DATA_VERSION = '1.0.1';
+
 const AppContent: React.FC = () => {
   const [view, setView] = useState<ViewState>('HOME');
   const [banks, setBanks] = useState<QuestionBank[]>([]);
@@ -18,20 +21,25 @@ const AppContent: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
+    const savedVersion = localStorage.getItem('cx_quiz_version');
     const saved = localStorage.getItem('cx_quiz_banks');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed) && parsed.length > 0) {
-          setBanks(parsed);
-        } else {
-          setBanks(DEFAULT_BANKS);
-        }
-      } catch (e) {
-        console.error("Failed to load banks", e);
+    
+    // 如果版本不匹配或没有保存的数据，使用默认题库
+    if (savedVersion !== DATA_VERSION || !saved) {
+      setBanks(DEFAULT_BANKS);
+      localStorage.setItem('cx_quiz_version', DATA_VERSION);
+      return;
+    }
+    
+    try {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        setBanks(parsed);
+      } else {
         setBanks(DEFAULT_BANKS);
       }
-    } else {
+    } catch (e) {
+      console.error("Failed to load banks", e);
       setBanks(DEFAULT_BANKS);
     }
   }, []);
