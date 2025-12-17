@@ -163,6 +163,80 @@ const QuizPlayer: React.FC<QuizPlayerProps> = ({ bank, initialQuestions, onExit 
     return { correct, wrong };
   }, [isFinished, questions, userAnswers, checkAnswer]);
 
+  const renderTitle = (title: string) => {
+    const isHtml = /<[a-z][\s\S]*>/i.test(title) || title.includes('&lt;') || title.includes('&nbsp;');
+    if (isHtml) {
+      return (
+        <div
+          className="text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
+      );
+    }
+    const looksLikeJs = /function\s+\w+\s*\(|[{;}]/.test(title);
+    const looksLikePy = /\b(if|else|elif|while|for|def|class|print)\b/.test(title) || /:\s*\b(if|else|elif)\b/.test(title);
+    if (looksLikeJs || looksLikePy) {
+      let formatted = title;
+      if (looksLikeJs) {
+        formatted = formatted
+          .replace(/\)\s*\{/g, ') {\n')
+          .replace(/\{\s*/g, '{\n')
+          .replace(/;\s*/g, ';\n')
+          .replace(/\}\s*/g, '\n}');
+      }
+      if (looksLikePy) {
+        formatted = formatted
+          .replace(/\s+def\s+/g, '\ndef ')
+          .replace(/\s+class\s+/g, '\nclass ')
+          .replace(/\s+if\s+/g, '\nif ')
+          .replace(/\s+elif\s+/g, '\nelif ')
+          .replace(/\s+else\s*:/g, '\nelse:')
+          .replace(/\s+while\s+/g, '\nwhile ')
+          .replace(/\s+for\s+/g, '\nfor ')
+          .replace(/:\s*print\(/g, ':\nprint(')
+          .replace(/\)\s+if\s+/g, ')\nif ')
+          .replace(/\)\s+while\s+/g, ')\nwhile ')
+          .replace(/\{\s*/g, '{\n')
+          .replace(/,\s*"/g, ',\n"')
+          .replace(/\}\s*print/g, '\n}\nprint');
+      }
+      const applyIndent = (code: string, lang: 'js' | 'py') => {
+        const lines = code.split('\n').map(l => l.trim());
+        let indent = 0;
+        const out: string[] = [];
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          if (lang === 'js') {
+            if (/^\}/.test(line)) indent = Math.max(0, indent - 1);
+            out.push(`${'  '.repeat(indent)}${line}`);
+            if (/\{$/.test(line)) indent++;
+          } else {
+            const startsBlock = /^(def|class|if|elif|else:|for|while)\b/.test(line);
+            const isCallOrPrint = /^[a-zA-Z_]\w*\s*\(/.test(line) || /^print\(/.test(line);
+            if (isCallOrPrint) indent = 0;
+            out.push(`${'  '.repeat(indent)}${line}`);
+            if (line.endsWith(':')) indent = 1;
+            if (startsBlock && !line.endsWith(':')) indent = 0;
+          }
+        }
+        return out.join('\n');
+      };
+      formatted = applyIndent(formatted, looksLikeJs ? 'js' : 'py');
+      return (
+        <div className="rounded-2xl border border-slate-300/50 bg-slate-900/5 p-4 shadow-sm">
+          <pre className="text-base md:text-lg font-mono whitespace-pre-wrap text-slate-800 leading-relaxed drop-shadow-sm select-text">
+            {formatted}
+          </pre>
+        </div>
+      );
+    }
+    return (
+      <h2 className="text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text">
+        {title}
+      </h2>
+    );
+  };
+
   // --- Render Results Screen ---
   if (isFinished) {
     const isPerfect = results.wrong === 0;
@@ -271,9 +345,7 @@ const QuizPlayer: React.FC<QuizPlayerProps> = ({ bank, initialQuestions, onExit 
           <span className="inline-block bg-white/50 text-brand-700 text-xs font-extrabold px-3 py-1 rounded-lg uppercase tracking-wider mb-4 border border-white/50 shadow-sm backdrop-blur-md">
             {isJudgment ? "判断" : question.type}
           </span>
-          <h2 className="text-xl md:text-3xl font-bold text-slate-800 leading-relaxed drop-shadow-sm select-text">
-            {question.title}
-          </h2>
+          {renderTitle(question.title)}
           {question.images && question.images.length > 0 && (
             <div className="mt-6 flex gap-4 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-brand-200">
               {question.images.map((img, i) => (
