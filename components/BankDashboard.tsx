@@ -65,8 +65,14 @@ const BankDashboard: React.FC<BankDashboardProps> = ({ banks, onDelete, onStart 
       }
     });
 
-    // Sort: Put chunked types first or alphabetically
-    return groups.sort((a, b) => a.label.localeCompare(b.label));
+    // Stable sort: by type label, then numeric chunk index if present
+    return groups.sort((a, b) => {
+      const [alType, blType] = [a.label.split(' ')[0], b.label.split(' ')[0]];
+      if (alType !== blType) return alType.localeCompare(blType);
+      const aNum = parseInt(a.id.match(/_part_(\d+)/)?.[1] || '0', 10);
+      const bNum = parseInt(b.id.match(/_part_(\d+)/)?.[1] || '0', 10);
+      return aNum - bNum;
+    });
   }, [configBank]);
 
   const handleStartClick = (bank: QuestionBank) => {
@@ -126,10 +132,14 @@ const BankDashboard: React.FC<BankDashboardProps> = ({ banks, onDelete, onStart 
 
   const confirmStartFiltered = () => {
     if (configBank) {
-      // Gather all questions from selected groups
-      const selectedQuestions = getFilterGroups
+      // Gather selected question IDs from groups
+      const selectedIds = new Set<number>();
+      getFilterGroups
         .filter(g => selectedGroupIds.includes(g.id))
-        .flatMap(g => g.questions);
+        .forEach(g => g.questions.forEach(q => selectedIds.add(q.id)));
+
+      // Preserve original order from bank.questions
+      const selectedQuestions = configBank.questions.filter(q => selectedIds.has(q.id));
       
       onStart(configBank.id, selectedQuestions);
       setConfigBank(null);

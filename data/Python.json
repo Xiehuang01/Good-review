@@ -2901,7 +2901,7 @@
           "text": "刷新数据"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["将数据图存储为文件"],
       "selectedAnswer": [],
       "images": []
     },
@@ -2927,7 +2927,7 @@
           "text": "两个数组的行数不同,不能运算"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["array( [[ 2,3,4], [ 4,6,8],[ 6,9,12], [ 8,12,16]]"],
       "selectedAnswer": [],
       "images": []
     },
@@ -2953,7 +2953,7 @@
           "text": "array([[2,1,3], [3,2,4] ,[4,3,5]]) array( [2,1,3,3,2,4, 4,3,5])"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["array([[2,1,3], [3,2,4] ,[4,3,5]])array([[2,1,3], [3,2,4] ,[4,3,5]])"],
       "selectedAnswer": [],
       "images": []
     },
@@ -2979,7 +2979,7 @@
           "text": "array([-10, -8, -6, -4, -2])"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["array([-9, -7, -5, -3, -1])"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3005,7 +3005,7 @@
           "text": "urllib"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["urllib"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3031,7 +3031,7 @@
           "text": "处理HTTP请求"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["解析和处理HTML和XML"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3057,7 +3057,7 @@
           "text": "PySpider"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["SnowNLP"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3083,7 +3083,7 @@
           "text": "超级链接的格式信息"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["超级链接的属性信息"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3109,7 +3109,7 @@
           "text": "Request"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["Response"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3135,7 +3135,7 @@
           "text": "捕获到的异常只能在当前方法中处理,而不能在其他方法中处理"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["捕获到的异常只能在当前方法中处理,而不能在其他方法中处理"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3161,7 +3161,7 @@
           "text": "finally语句后面的代码段不一定总是被执行的,如果抛出异常,该代码不执行"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["except语句在try语句的后面,该语句可以不接异常名称"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3187,7 +3187,7 @@
           "text": "使用异常处理会使整个系统更加安全和稳健"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["在方法中声明抛出异常 关键字是throw语句"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3213,7 +3213,7 @@
           "text": "a"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["abde"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3239,7 +3239,7 @@
           "text": "KeyError"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["SyntaxError"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3265,7 +3265,7 @@
           "text": "except"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["except"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3291,7 +3291,7 @@
           "text": "ZeroDivisionError"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["FileNotFoundError"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3317,7 +3317,7 @@
           "text": "ZeroDivisionError"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["IndexError"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3343,7 +3343,7 @@
           "text": "KeyError"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["KeyError"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3570,7 +3570,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3588,7 +3588,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3606,7 +3606,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["False"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3624,7 +3624,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3642,7 +3642,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3660,7 +3660,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3678,7 +3678,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3696,7 +3696,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3714,7 +3714,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3732,7 +3732,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3750,7 +3750,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3768,7 +3768,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3786,7 +3786,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3804,7 +3804,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3822,7 +3822,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3840,7 +3840,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["False"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3858,7 +3858,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3876,7 +3876,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": ["False"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3894,7 +3894,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3912,7 +3912,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3930,7 +3930,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3948,7 +3948,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3966,7 +3966,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -3984,7 +3984,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
@@ -4002,7 +4002,7 @@
           "text": "False"
         }
       ],
-      "correctAnswer": [],
+      "correctAnswer": [ "True"],
       "selectedAnswer": [],
       "images": []
     },
